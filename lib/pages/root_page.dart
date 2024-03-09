@@ -18,6 +18,7 @@ class _RootAppState extends State<RootApp> {
     return Scaffold(
       backgroundColor: white,
       bottomNavigationBar: getFooter(),
+      body: getBody(),
     );
   }
 
@@ -36,5 +37,23 @@ class _RootAppState extends State<RootApp> {
             title: Text(rootAppJson[index]['text']),
           );
         }));
+  }
+
+  Widget getBody() {
+    //根据当前选中的索引显示不同的子组件。
+    return IndexedStack(index: pageIndex, children: [
+      Center(
+          child: Text('首页',
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold))),
+      Center(
+          child: Text('书架',
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold))),
+      Center(
+          child: Text('书城',
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold))),
+      Center(
+          child: Text('设置',
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)))
+    ]);
   }
 }
