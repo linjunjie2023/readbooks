@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:readbook/theme/colors.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 import 'package:readbook/json/root_app_json.dart';
+import 'package:readbook/pages/home_page.dart';
 
 class RootApp extends StatefulWidget {
   const RootApp({super.key});
@@ -42,9 +43,7 @@ class _RootAppState extends State<RootApp> {
   Widget getBody() {
     //根据当前选中的索引显示不同的子组件。
     return IndexedStack(index: pageIndex, children: [
-      Center(
-          child: Text('首页',
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold))),
+      HomePage(),
       Center(
           child: Text('书架',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold))),
